@@ -6,7 +6,6 @@ const Picture = (props) => {
     const [isLoaded, setIsLoaded] = useState(false)
     const imgRef = useRef()
     const data = props.data
-    console.log(data)
 
     useIntersection(imgRef, () => {
       setIsInView('true')
@@ -23,7 +22,6 @@ const Picture = (props) => {
               src={data.urls.thumb}
               alt={data.description}
             />
-
             <img className={`pic ${isLoaded ? 'isLoaded' : ''}`} 
             src={data.urls.small} 
             alt={data.description}

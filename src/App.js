@@ -2,7 +2,7 @@ import './App.css';
 import Pictures from './components/Pictures'
 import React, {useEffect, useState} from 'react';
 import Header from './components/Header'
-
+const API_URL = 'https://api.unsplash.com/photos/'
 
 const App = (props) => {
   const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ const App = (props) => {
     const loadPictures = async() => {
       try {
         setIsLoading(true);
-        const res = await fetch(`https://api.unsplash.com/photos/?page=${page}&per_page=9&client_id=${process.env.REACT_APP_API_KEY}`);
+        const res = await fetch(`${API_URL}?page=${page}&per_page=9&client_id=${process.env.REACT_APP_API_KEY}`);
         const resData = await res.json()
         setData((data)=>data.concat(resData))
       }
@@ -35,22 +35,19 @@ const App = (props) => {
     <div className='container'>
       <Header />
       {process.env.REACT_APP_API_KEY ?
-      <>
-        <Pictures data={data}/> 
-        <button onClick={loadMore} 
-        className='btn more'>{isLoading ? 'Loading..' : 'Load More'}</button> 
-      </>
-        :
+        <>
+          <Pictures data={data}/> 
+          <button onClick={loadMore} 
+          className='btn more'>{isLoading ? 'Loading..' : 'Load More'}</button> 
+        </>
+      :
         <> 
           <h1>Missing API Key</h1>
           <p>Did you create a .env file?</p>
         </>
-      
-    }
+      }
       
     </div>
-
-    
   )
 }
 
