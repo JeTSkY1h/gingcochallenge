@@ -1,6 +1,6 @@
-# Unsplash Wallpaper Downlaoder
+# Unsplash Wallpaper Downloader
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Coding Challenge from Gingco Communication
 
 ## Variables
 
