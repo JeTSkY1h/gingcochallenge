@@ -77,25 +77,26 @@
   color: white;
 }
 
-.info h2, p {
+.name {
+  font-weight: bold;
+}
+
+.info p {
   margin: 0;
 }
 
 .btn {
+  padding: 0.5rem 1rem  0.5rem 1rem;
   border-radius: 2px;
   padding: 0.5rem;
   text-decoration: none;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 .download {
-  border-radius: 2px;
   font-weight: bold;
   color: white;
-  padding: 1rem;
   border: 1px solid white;
-  text-decoration: none;
-  margin: 1rem;
   float: right;
 }
 

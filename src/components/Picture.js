@@ -32,7 +32,7 @@ const Picture = (props) => {
         <div className='overlay'>
           <a href={data.urls.raw} className='btn download'>Download</a>
           <div className='info'>
-            <h2>{data.user.name}</h2>
+            <p className='name'>{data.user.name}</p>
             <p>{data.description}</p>
           </div>
         </div> 

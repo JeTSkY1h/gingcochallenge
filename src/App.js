@@ -3,8 +3,9 @@ import Pictures from './components/Pictures'
 import React, {useEffect, useState} from 'react';
 import Header from './components/Header'
 const API_URL = 'https://api.unsplash.com/photos/'
+const PICS_PER_PAGE = 9
 
-const App = (props) => {
+const App = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
   const [page, setPage] = useState(1);
@@ -13,7 +14,7 @@ const App = (props) => {
     const loadPictures = async() => {
       try {
         setIsLoading(true);
-        const res = await fetch(`${API_URL}?page=${page}&per_page=9&client_id=${process.env.REACT_APP_API_KEY}`);
+        const res = await fetch(`${API_URL}?page=${page}&per_page=${PICS_PER_PAGE}&client_id=${process.env.REACT_APP_API_KEY}`);
         const resData = await res.json()
         setData((data)=>data.concat(resData))
       }
@@ -38,7 +39,7 @@ const App = (props) => {
         <>
           <Pictures data={data}/> 
           <button onClick={loadMore} 
-          className='btn more'>{isLoading ? 'Loading..' : 'Load More'}</button> 
+          className='btn more'>{isLoading ? 'Loading' : 'Load More'}</button> 
         </>
       :
         <> 
