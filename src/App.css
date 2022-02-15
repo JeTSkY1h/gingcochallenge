@@ -1,0 +1,113 @@
+.container {
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+  max-width: 1300px;
+}
+
+.heading {
+  margin: 32px auto 32px auto;
+  text-align: center;
+}
+
+.pic-flex {
+  justify-content: center;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pic-wrapper:hover > .overlay {
+  opacity: 1;
+}
+
+.pic-wrapper:hover > .pic{
+  scale: 1.1;
+}
+
+.pic-wrapper {
+  border-radius: 5px;
+  margin: 16px;
+  position: relative;
+  min-width: 24rem;
+  height: 13.5rem;
+  overflow: hidden;
+
+}
+
+.pic, .thumb{
+  transition: all 1s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pic.isLoaded {
+  transition-property: all;
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+.thumb {
+  opacity: 1;
+  filter: blur(10px);
+}
+
+.thumb.isLoaded {
+  opacity: 0;
+}
+
+.overlay {
+  transition: all 0.5s;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  margin: 16px;
+  bottom: 0;
+  position: absolute;
+  color: white;
+}
+
+.info h2, p {
+  margin: 0;
+}
+
+.btn {
+  border-radius: 2px;
+  padding: 8px;
+  text-decoration: none;
+  margin: 8px;
+}
+
+.download {
+  border-radius: 2px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  border: 1px solid white;
+  text-decoration: none;
+  margin: 8px;
+  float: right;
+}
+
+.more {
+  transition: all 0.2s;
+  margin: auto;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.more:hover {
+  background-color: black;
+  color: #fff;
+}
