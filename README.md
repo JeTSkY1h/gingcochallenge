@@ -1,7 +1,5 @@
 # Unsplash Wallpaper Downloader
 
-# Test-branch Änderungen.
-
 Coding Challenge from Gingco Communication
 
 ## Variables
